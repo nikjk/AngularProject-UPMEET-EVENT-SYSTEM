@@ -1,7 +1,5 @@
-
-
-create database UpmeetEventDB;
-   use UpmeetEventDB; 
+CREATE DATABASE UpmeetEventDB;
+USE UpmeetEventDB; 
    
      CREATE TABLE Events (
      EventId int NOT NULL IDENTITY(1,1) PRIMARY KEY,
