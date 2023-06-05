@@ -24,6 +24,4 @@ public partial class Event
     public string? EventLocation { get; set; }
 
     public decimal? Price { get; set; }
-
-    public virtual ICollection<Favorites> Favorites { get; set; } = new List<Favorites>();
 }

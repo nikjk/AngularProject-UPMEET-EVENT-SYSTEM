@@ -22,7 +22,7 @@ namespace UpMeetEventAPI.Controllers
 
         // GET: api/Favorites
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Favorites>>> GetFavorites()
+        public async Task<ActionResult<IEnumerable<Favorite>>> GetFavorites()
         {
           if (_context.Favorites == null)
           {
@@ -33,7 +33,7 @@ namespace UpMeetEventAPI.Controllers
 
         // GET: api/Favorites/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Favorites>> GetFavorite(int id)
+        public async Task<ActionResult<Favorite>> GetFavorite(int id)
         {
           if (_context.Favorites == null)
           {
@@ -52,7 +52,7 @@ namespace UpMeetEventAPI.Controllers
         // PUT: api/Favorites/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutFavorite(int id, Favorites favorite)
+        public async Task<IActionResult> PutFavorite(int id, Favorite favorite)
         {
             if (id != favorite.Userid)
             {
@@ -83,7 +83,7 @@ namespace UpMeetEventAPI.Controllers
         // POST: api/Favorites
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Favorites>> PostFavorite(Favorites favorite)
+        public async Task<ActionResult<Favorite>> PostFavorite(Favorite favorite)
         {
           if (_context.Favorites == null)
           {
@@ -94,7 +94,7 @@ namespace UpMeetEventAPI.Controllers
 
             return CreatedAtAction("GetFavorite", new { id = favorite.Userid }, favorite);
         }
-
+    
         // DELETE: api/Favorites/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteFavorite(int id)
