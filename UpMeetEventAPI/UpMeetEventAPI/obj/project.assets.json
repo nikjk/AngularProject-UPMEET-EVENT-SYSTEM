@@ -10724,19 +10724,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ashwa\\.nuget\\packages\\": {}
+    "C:\\Users\\Jeffr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Ashwath\\UpmeetProject\\AngularProject-UPMEET-EVENT-SYSTEM\\UpMeetEventAPI\\UpMeetEventAPI\\UpMeetEventAPI.csproj",
+      "projectUniqueName": "D:\\repos\\AngularProject-UPMEET-EVENT-SYSTEM\\UpMeetEventAPI\\UpMeetEventAPI\\UpMeetEventAPI.csproj",
       "projectName": "UpMeetEventAPI",
-      "projectPath": "C:\\Ashwath\\UpmeetProject\\AngularProject-UPMEET-EVENT-SYSTEM\\UpMeetEventAPI\\UpMeetEventAPI\\UpMeetEventAPI.csproj",
-      "packagesPath": "C:\\Users\\ashwa\\.nuget\\packages\\",
-      "outputPath": "C:\\Ashwath\\UpmeetProject\\AngularProject-UPMEET-EVENT-SYSTEM\\UpMeetEventAPI\\UpMeetEventAPI\\obj\\",
+      "projectPath": "D:\\repos\\AngularProject-UPMEET-EVENT-SYSTEM\\UpMeetEventAPI\\UpMeetEventAPI\\UpMeetEventAPI.csproj",
+      "packagesPath": "C:\\Users\\Jeffr\\.nuget\\packages\\",
+      "outputPath": "D:\\repos\\AngularProject-UPMEET-EVENT-SYSTEM\\UpMeetEventAPI\\UpMeetEventAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ashwa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jeffr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10810,7 +10810,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
