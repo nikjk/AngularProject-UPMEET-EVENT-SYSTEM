@@ -14,12 +14,23 @@ USE UpmeetEventDB;
 	 Price decimal,
 	 );
 
-	 CREATE TABLE Favorites (
-	 Userid int NOT NULL IDENTITY(1,1) PRIMARY KEY,
-	 Eventid int FOREIGN KEY REFERENCES Events(EventId),
-	 Username nvarchar(30),
-	 IsFavorite bit 
-	 );
+	 DROP TABLE dbo.Favorites;
+
+	CREATE TABLE Favorites (
+	FavoriteId int NOT NULL IDENTITY(1,1)  PRIMARY KEY,
+    Userid int,
+    Eventid int,    
+    IsFavorite bit
+   
+);
+
+CREATE TABLE Users (
+	UserId int NOT NULL IDENTITY(1,1)  PRIMARY KEY,
+    UserName nvarchar(40)
+   
+);
+     
+
 
 INSERT INTO Events(EventName, EventDescription, CreatedBy, CreatedDate, EventStartDate, EventEndDate, EventType, EventLocation, Price)
 VALUES 
@@ -35,15 +46,3 @@ VALUES
 ('Gardening Workshop', 'Learn about gardening tips and techniques from expert horticulturists', 'Noah Wilson', '2023-04-27', '2023-07-08', '2023-07-08', 'Gardening', 'Botanical Gardens', 19.99);
 
 
-INSERT INTO Favorites(Eventid, Username, IsFavorite)
-VALUES
-(3, 'john.smith', 1),
-(5, 'emily.ward', 0),
-(2, 'david.jones', 1),
-(1, 'sarah.doe', 1),
-(7, 'michael.lin', 0),
-(4, 'amy.green', 1),
-(9, 'jessica.b', 0),
-(6, 'robert.j', 1),
-(3, 'lisa.t', 1),
-(8, 'sam.w', 0);
