@@ -14,4 +14,11 @@ export class EventsComponent {
     this.getEvents();
   }
 
+  getEvents() {
+    this.apiService.getAllEvents()
+        .subscribe( result => {
+          console.log(result);
+        });
+  }
+
 }
