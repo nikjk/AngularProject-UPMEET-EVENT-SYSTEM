@@ -17,17 +17,19 @@ public partial class UpMeetEventDbContext : DbContext
 
     public virtual DbSet<Event> Events { get; set; }
 
-    public virtual DbSet<Favorites> Favorites { get; set; }
+    public virtual DbSet<Favorite> Favorites { get; set; }
+
+    public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=.\\SQLExpress;Database=UpMeetEventDB; Integrated Security=true; Encrypt=false");
+        => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS02; Database=UpMeetEventDB; Integrated Security=SSPI; Trust Server Certificate=true; Encrypt=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Event>(entity =>
         {
-            entity.HasKey(e => e.EventId).HasName("PK__Events__7944C8104CE6D0D6");
+            entity.HasKey(e => e.EventId).HasName("PK__Events__7944C81004A90D60");
 
             entity.Property(e => e.CreatedBy).HasMaxLength(30);
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
@@ -39,15 +41,16 @@ public partial class UpMeetEventDbContext : DbContext
             entity.Property(e => e.Price).HasColumnType("decimal(18, 0)");
         });
 
-        modelBuilder.Entity<Favorites>(entity =>
+        modelBuilder.Entity<Favorite>(entity =>
         {
-            entity.HasKey(e => e.Userid).HasName("PK__Favorite__1797D0240018425D");
+            entity.HasKey(e => e.FavoriteId).HasName("PK__Favorite__CE74FAD5A6C92C94");
+        });
 
-            entity.Property(e => e.Username).HasMaxLength(30);
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CC4C1F86739E");
 
-            entity.HasOne(d => d.Event).WithMany(p => p.Favorites)
-                .HasForeignKey(d => d.Eventid)
-                .HasConstraintName("FK__Favorites__Event__4BAC3F29");
+            entity.Property(e => e.UserName).HasMaxLength(40);
         });
 
         OnModelCreatingPartial(modelBuilder);
