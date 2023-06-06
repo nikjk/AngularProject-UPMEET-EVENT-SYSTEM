@@ -19,6 +19,9 @@ export class ApiService {
     return this.http.get(this.url + "Users");
    }
 
+   getAllEvents(){
+    return this.http.get(this.url + "Events");
+   }
 
 
 }
