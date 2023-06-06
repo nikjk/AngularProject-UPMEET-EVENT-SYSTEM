@@ -29,7 +29,7 @@ namespace UpMeetEventAPI.Controllers
             }
             return await _context.Users.ToListAsync();
         }
-
+        /* get users */
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
