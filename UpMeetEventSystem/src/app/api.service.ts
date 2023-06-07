@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Events } from './events';
 
 @Injectable({
   providedIn: 'root'
@@ -19,9 +21,20 @@ export class ApiService {
     return this.http.get(this.url + "Users");
    }
 
-   getAllEvents(){
-    return this.http.get(this.url + "Events");
+   getEvents(): Observable<Events[]> {
+    return this.http.get<Events[]>(`${this.url}/Events`);
+    }
+
+  getEvent(id: number): Observable<Events> {
+    return this.http.get<Events>(`${this.url}/GetEvent/${id}`);
+    }
+
+  createEvent(event: Events): Observable<Events> {
+    return this.http.post<Events>(`${this.url}/CreateEvent`, event);
    }
 
+  deleteEvent(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/DeleteEvent/${id}`);
+  }
 
 }
