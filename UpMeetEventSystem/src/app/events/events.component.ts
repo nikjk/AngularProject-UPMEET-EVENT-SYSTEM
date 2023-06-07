@@ -23,8 +23,8 @@ export class EventsComponent {
   }
 
   getEvent(id: number) {
-    this.apiService.getEvent(id)
-      .subscribe( result => {
+    this.apiService.getEvent(id).subscribe(
+      (result) => {
         console.log(result);
       },
       (error) => {
