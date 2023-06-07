@@ -11,7 +11,7 @@ export class EventsComponent {
   constructor(private apiService: ApiService){}
 
   ngOnInit(): void {
-    this.getEvents();
+  //  this.getEvents();
   }
 
 }

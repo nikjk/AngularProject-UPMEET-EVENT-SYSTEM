@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Favorites } from './favorites';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +20,14 @@ export class ApiService {
    getAllUsers(){
 
     return this.http.get(this.url + "Users");
+   }
+
+   
+   getAllFavorites(id: number): Observable<Favorites>  {    
+
+    return this.http.get<Favorites>(this.url + "Favorites/" + id );
+
+    
    }
 
 
