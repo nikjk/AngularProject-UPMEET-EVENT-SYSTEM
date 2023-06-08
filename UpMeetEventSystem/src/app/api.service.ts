@@ -53,4 +53,9 @@ export class ApiService {
     return this.http.get<Favorites>(this.url + "/Favorites/" +  id);
   }
 
+  addFavorite(favorite: Favorites): Observable<Favorites> {
+    const url = `${this.url}/Favorites/AddFavorite`;
+    return this.http.post<Favorites>(url, favorite);
+  }
+
 }

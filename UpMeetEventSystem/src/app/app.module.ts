@@ -11,6 +11,7 @@ import { FormComponent } from './event-form/event-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { EventDetailComponent } from './event-detail/event-detail.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     EventsComponent,
     FavoritesComponent,
     FormComponent,
-    NavigationComponent
+    NavigationComponent,
+    EventDetailComponent
   ],
   imports: [
     BrowserModule,

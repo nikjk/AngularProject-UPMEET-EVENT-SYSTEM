@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nikku\\Projects\\AngularProject-UPMEET-EVENT-SYSTEM\\UpMeetEventAPI\\UpMeetEventAPI\\UpMeetEventAPI.csproj": {}
+    "C:\\Users\\nikku\\Desktop\\Project\\AngularProject-UPMEET-EVENT-SYSTEM\\UpMeetEventAPI\\UpMeetEventAPI\\UpMeetEventAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nikku\\Projects\\AngularProject-UPMEET-EVENT-SYSTEM\\UpMeetEventAPI\\UpMeetEventAPI\\UpMeetEventAPI.csproj": {
+    "C:\\Users\\nikku\\Desktop\\Project\\AngularProject-UPMEET-EVENT-SYSTEM\\UpMeetEventAPI\\UpMeetEventAPI\\UpMeetEventAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nikku\\Projects\\AngularProject-UPMEET-EVENT-SYSTEM\\UpMeetEventAPI\\UpMeetEventAPI\\UpMeetEventAPI.csproj",
+        "projectUniqueName": "C:\\Users\\nikku\\Desktop\\Project\\AngularProject-UPMEET-EVENT-SYSTEM\\UpMeetEventAPI\\UpMeetEventAPI\\UpMeetEventAPI.csproj",
         "projectName": "UpMeetEventAPI",
-        "projectPath": "C:\\Users\\nikku\\Projects\\AngularProject-UPMEET-EVENT-SYSTEM\\UpMeetEventAPI\\UpMeetEventAPI\\UpMeetEventAPI.csproj",
+        "projectPath": "C:\\Users\\nikku\\Desktop\\Project\\AngularProject-UPMEET-EVENT-SYSTEM\\UpMeetEventAPI\\UpMeetEventAPI\\UpMeetEventAPI.csproj",
         "packagesPath": "C:\\Users\\nikku\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nikku\\Projects\\AngularProject-UPMEET-EVENT-SYSTEM\\UpMeetEventAPI\\UpMeetEventAPI\\obj\\",
+        "outputPath": "C:\\Users\\nikku\\Desktop\\Project\\AngularProject-UPMEET-EVENT-SYSTEM\\UpMeetEventAPI\\UpMeetEventAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

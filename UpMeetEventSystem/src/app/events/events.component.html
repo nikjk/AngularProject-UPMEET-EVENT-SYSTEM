@@ -9,7 +9,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let event of events">
+      <tr
+        *ngFor="let event of events"
+        [routerLink]="['/event-detail', event.eventId]"
+      >
         <td>{{ event.eventName }}</td>
         <td>{{ event.eventStartDate | date }}</td>
       </tr>
