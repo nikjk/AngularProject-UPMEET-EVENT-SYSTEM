@@ -12,13 +12,16 @@ export class FavoritesComponent implements OnInit{
  
   userFavorites: any;
   
-  constructor(private apiService: ApiService){}
+  constructor(private apiService: ApiService){
+    
+  }
 
 
 
   
   ngOnInit(): void {
     this.getAllFavorites();
+    
   }
   
   
@@ -28,13 +31,25 @@ export class FavoritesComponent implements OnInit{
       .subscribe(
         (response) => {
           this.userFavorites = response;
+          
           console.log(this.userFavorites);
-        },
-        (error: any) => {
-          console.log('Error occurred in getting favorites:', error);
         }
+        
       );
   }
+
+  
+  updateFavoriteStatus(favorite: Favorites) {
+    favorite.isFavorite = !favorite.isFavorite; // Toggle the isFavorite property
+
+    // Update the favorite in the database
+    this.apiService.updateFavorite(favorite).subscribe(
+      (response: any) => {
+        console.log('Favorite updated:', favorite);
+      }
+    );
+  }
+
   /* updateFavoriteStatus() {
     // Perform any necessary actions when the favorite status changes
     console.log('Favorite status updated:', this.favoriteEvent.IsFavorite); 
