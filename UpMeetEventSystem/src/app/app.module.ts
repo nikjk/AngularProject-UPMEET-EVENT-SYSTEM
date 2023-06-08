@@ -9,6 +9,7 @@ import { UsersComponent } from './users/users.component';
 import { EventsComponent } from './events/events.component';
 import { FormComponent } from './event-form/event-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     UsersComponent,
     EventsComponent,
+    FavoritesComponent,
     FormComponent
   ],
   imports: [

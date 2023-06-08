@@ -15,18 +15,18 @@ export class ApiService {
 
   // define the API URL
 
-  private readonly url = 'https://localhost:7073/api/';
+  private readonly url = 'https://localhost:7073/api';
 
   // write methods to connect to the API: GetAllUsers, GetAllEvents, GetAllFavorites AddUser, AddFavorites
 
    getAllUsers(){
 
-    return this.http.get(this.url + "Users");
+    return this.http.get(this.url + "/Users/GetAllUsers");
    }
    
    getAllFavorites(id: number): Observable<Favorites>  {    
 
-    return this.http.get<Favorites>(this.url + "Favorites/" + id );
+    return this.http.get<Favorites>(this.url + "/Favorites/" + id );
    }
 
    getEvents(): Observable<Events[]> {

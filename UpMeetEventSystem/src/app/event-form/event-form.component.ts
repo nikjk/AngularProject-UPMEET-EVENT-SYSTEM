@@ -18,14 +18,15 @@ export class FormComponent
 
    constructor(private formBuilder: FormBuilder, private apiService: ApiService){
      this.Form = this.formBuilder.group({
-       EventName: ['', Validators.required],
-       EventDescription: ['', Validators.required],
-       CreatedBy: [',', Validators.required],
-       EventStartDate: [',', Validators.required],
-       EventEndDate: [',', Validators.required],
-       EventType: [',', Validators.required],
-       EventLocation: [',', Validators.required],
-       Price: [',', Validators.required],
+       eventName: ['', Validators.required],
+       eventDescription: ['', Validators.required],
+       createdBy: ['', Validators.required],
+       createdDate: ['', Validators.required],
+       eventStartDate: ['', Validators.required],
+       eventEndDate: ['', Validators.required],
+       eventType: ['', Validators.required],
+       eventLocation: ['', Validators.required],
+       price: ['', Validators.required]
      });
 
    }
