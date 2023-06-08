@@ -1,25 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Events } from '../events';
+
 
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.css']
 })
-export class EventsComponent {
-
+export class EventsComponent implements OnInit {
+  events: any[] = [];
   constructor(private apiService: ApiService){}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getEvents();
   }
 
-  getEvents() {
+  getEvents(): void {
     this.apiService.getEvents()
-        .subscribe( result => {
+      .subscribe(
+        (result: any[]) => {
+          this.events = result;
           console.log(result);
-        });
+        },
+      );
   }
 
   getEvent(id: number) {
@@ -27,23 +31,20 @@ export class EventsComponent {
       (result) => {
         console.log(result);
       },
-      (error) => {
-        console.error(error);
-      }
     );
   }
 
   createEvent() {
     const newEvent: Events = {
-      EventName: 'New Event',
-      EventDescription: 'Event Description',
-      CreatedBy: 'Created By',
-      CreatedDate: new Date(),
-      EventStartDate: new Date(),
-      EventEndDate: new Date(),
-      EventType: 'Event Type',
-      EventLocation: 'Event Location',
-      Price: 0
+      eventName: 'New Event',
+      eventDescription: 'Event Description',
+      createdBy: 'Created By',
+      createdDate: new Date(),
+      eventStartDate: new Date(),
+      eventEndDate: new Date(),
+      eventType: 'Event Type',
+      eventLocation: 'Event Location',
+      price: 0
       // Set other properties as needed
     };
 
@@ -51,9 +52,6 @@ export class EventsComponent {
       (result) => {
         console.log(result);
       },
-      (error) => {
-        console.error(error);
-      }
     );
   }
 
@@ -62,9 +60,6 @@ export class EventsComponent {
       () => {
         console.log('Event deleted successfully.');
       },
-      (error) => {
-        console.error(error);
-      }
     );
   }
 }
