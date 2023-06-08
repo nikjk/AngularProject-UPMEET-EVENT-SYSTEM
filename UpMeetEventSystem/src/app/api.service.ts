@@ -21,12 +21,12 @@ export class ApiService {
 
    getAllUsers(){
 
-    return this.http.get(this.url + "Users");
+    return this.http.get(this.url + "/Users/GetAllUsers");
    }
    
    getAllFavorites(id: number): Observable<Favorites>  {    
 
-    return this.http.get<Favorites>(this.url + "Favorites/" + id );
+    return this.http.get<Favorites>(this.url + "/Favorites/" + id );
    }
 
    getEvents(): Observable<Events[]> {
