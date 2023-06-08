@@ -15,22 +15,22 @@ export class ApiService {
 
   // define the API URL
 
-  private readonly url = 'https://localhost:7073/api/';
+  private readonly url = 'https://localhost:7073/api';
 
   // write methods to connect to the API: GetAllUsers, GetAllEvents, GetAllFavorites AddUser, AddFavorites
 
    getAllUsers(){
 
-    return this.http.get(this.url + "Users");
+    return this.http.get(this.url + "/Users/GetAllUsers");
    }
    
    getAllFavorites(id: number): Observable<Favorites>  {    
 
-    return this.http.get<Favorites>(this.url + "Favorites/" + id );
+    return this.http.get<Favorites>(this.url + "/Favorites/" + id );
    }
 
    getEvents(): Observable<Events[]> {
-    return this.http.get<Events[]>(`${this.url}/Events`);
+    return this.http.get<Events[]>(this.url + "/Events/Events");
     }
 
   getEvent(id: number): Observable<Events> {
@@ -43,6 +43,10 @@ export class ApiService {
 
   deleteEvent(id: number): Observable<any> {
     return this.http.delete<any>(`${this.url}/DeleteEvent/${id}`);
+  }
+
+  updateFavorite(favorite: Favorites): Observable<any> {
+    return this.http.delete(this.url + '/Favorites/DeleteFavorite/' + favorite.favoriteId);
   }
 
 }
