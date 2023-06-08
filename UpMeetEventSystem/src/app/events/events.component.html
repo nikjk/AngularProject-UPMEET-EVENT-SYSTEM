@@ -1,1 +1,18 @@
-<p>events works!</p>
+<h1>UpMeet Event System</h1>
+
+<div>
+  <table class="event-table">
+    <thead>
+      <tr>
+        <th>Event Name</th>
+        <th>Event Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of events">
+        <td>{{ event.eventName }}</td>
+        <td>{{ event.eventStartDate | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
