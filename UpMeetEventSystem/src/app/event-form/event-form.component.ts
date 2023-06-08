@@ -3,6 +3,7 @@ import { ApiService } from '../api.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Events } from '../events';
 import { Observable } from 'rxjs';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-event-form',
@@ -38,11 +39,17 @@ export class FormComponent
 
         // handle your user data here..
 
-        this.apiService.createEvent(event);
+         this.apiService.createEvent(event)
+      .subscribe(
+        () => {
+          console.log('Event created successfully');
+          console.error('Error creating event:', Error);
+        },
+      );
 
-        this.Form.reset();
-     }
-   }
+    this.Form.reset();
+  }
+}
  
   }
 
