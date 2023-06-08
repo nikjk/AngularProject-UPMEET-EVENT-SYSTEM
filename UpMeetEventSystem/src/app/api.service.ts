@@ -19,34 +19,38 @@ export class ApiService {
 
   // write methods to connect to the API: GetAllUsers, GetAllEvents, GetAllFavorites AddUser, AddFavorites
 
+//USER API'S
+
    getAllUsers(){
-
     return this.http.get(this.url + "/Users/GetAllUsers");
-   }
-   
-   getAllFavorites(id: number): Observable<Favorites>  {    
+  }
 
-    return this.http.get<Favorites>(this.url + "/Favorites/" + id );
-   }
+//EVENT API'S
 
    getEvents(): Observable<Events[]> {
     return this.http.get<Events[]>(this.url + "/Events/Events");
-   }
+  }
   
   getEvent(id: number): Observable<Events> {
-    return this.http.get<Events>(`${this.url}/GetEvent/${id}`);
-    }
+    return this.http.get<Events>(`${this.url}/Events/GetEvent/${id}`);
+  }
 
   createEvent(event: Events): Observable<Events> {
-    return this.http.post<Events>(`${this.url}/CreateEvent`, event);
-   }
+    return this.http.post<Events>(`${this.url}/Events/CreateEvent`, event);
+  }
 
   deleteEvent(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.url}/DeleteEvent/${id}`);
+    return this.http.delete<any>(`${this.url}/Events/DeleteEvent/${id}`);
   }
+
+//FAVORITE API'S
 
   updateFavorite(favorite: Favorites): Observable<any> {
     return this.http.delete(this.url + '/Favorites/DeleteFavorite/' + favorite.favoriteId);
+  }
+
+  getAllFavorites(id: number): Observable<Favorites>  {    
+    return this.http.get<Favorites>(this.url + "/GetFavorites" );
   }
 
 }
