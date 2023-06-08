@@ -30,7 +30,7 @@ export class ApiService {
    }
 
    getEvents(): Observable<Events[]> {
-    return this.http.get<Events[]>(`${this.url}/Events`);
+    return this.http.get<Events[]>(`${this.url}/Events/Events`);
     }
 
   getEvent(id: number): Observable<Events> {
