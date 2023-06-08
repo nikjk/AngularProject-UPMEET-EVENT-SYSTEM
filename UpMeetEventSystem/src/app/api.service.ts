@@ -50,7 +50,7 @@ export class ApiService {
   }
 
   getAllFavorites(id: number): Observable<Favorites>  {    
-    return this.http.get<Favorites>(this.url + "/GetFavorites" );
+    return this.http.get<Favorites>(this.url + "/Favorites/" +  id);
   }
 
 }
