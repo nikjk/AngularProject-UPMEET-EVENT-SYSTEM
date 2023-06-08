@@ -30,9 +30,9 @@ export class ApiService {
    }
 
    getEvents(): Observable<Events[]> {
-    return this.http.get<Events[]>(`${this.url}/Events/Events`);
-    }
-
+    return this.http.get<Events[]>(this.url + "/Events/Events");
+   }
+  
   getEvent(id: number): Observable<Events> {
     return this.http.get<Events>(`${this.url}/GetEvent/${id}`);
     }
@@ -43,6 +43,10 @@ export class ApiService {
 
   deleteEvent(id: number): Observable<any> {
     return this.http.delete<any>(`${this.url}/DeleteEvent/${id}`);
+  }
+
+  updateFavorite(favorite: Favorites): Observable<any> {
+    return this.http.delete(this.url + '/Favorites/DeleteFavorite/' + favorite.favoriteId);
   }
 
 }
