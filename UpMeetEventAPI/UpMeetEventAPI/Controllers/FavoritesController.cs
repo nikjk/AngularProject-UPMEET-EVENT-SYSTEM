@@ -49,6 +49,22 @@ namespace UpMeetEventAPI.Controllers
             return favorite;
         }
 
+        [HttpGet("{UserId:int}")]
+        public async Task<ActionResult<List<Favorite>>> GetUserFavorites(int UserId)
+        {
+            if (_context.Favorites == null)
+            {
+                return NotFound();
+            }
+            var favorite = await _context.Favorites.Where(f => f.Userid == UserId).ToListAsync();
+            if (favorite == null)
+            {
+                return NotFound();
+            }
+            return favorite;
+        }
+
+
         // PUT: api/Favorites/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         //[HttpPut("{id}")]

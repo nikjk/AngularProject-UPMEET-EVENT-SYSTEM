@@ -1,11 +1,11 @@
 export interface Events {
-    EventName: string;
-    EventDescription: string;
-    CreatedBy: string;
-    CreatedDate: Date;
-    EventStartDate: Date;
-    EventEndDate: Date;
-    EventType: string;
-    EventLocation: string;
-    Price: number;
+    eventName: string;
+    eventDescription: string;
+    createdBy: string;
+    createdDate: Date;
+    eventStartDate: Date;
+    eventEndDate: Date;
+    eventType: string;
+    eventLocation: string;
+    price: number;
 }
