@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Events } from '../events';
+import { HttpResponse } from '@angular/common/http';
 
 
 @Component({
@@ -51,13 +52,16 @@ export class EventsComponent implements OnInit {
     this.apiService.createEvent(newEvent).subscribe(
       (result) => {
         console.log(result);
-        console.log(Response);
-      }
+        console.log(HttpResponse)
+      },
     );
+  }
 
   deleteEvent(id: number) {
     this.apiService.deleteEvent(id).subscribe(
       () => {
         console.log('Event deleted successfully.');
+      },
+    );
   }
 }
